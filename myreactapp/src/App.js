@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+
+import { Button } from '@mui/material';
 import './App.css';
 
+
+const LogginButton = ({Text, onClickHandler}) => {
+  return (<Button variant="contained" onClick={onClickHandler}>{Text}</Button>);
+};
+
+const LoggoutButton = ({Text, onClickHandler}) => {
+  return (<Button variant="contained" onClick={onClickHandler}>{Text}</Button>);
+};
+
 function App() {
+
+	const onLogginEventHandler = () => {
+		alert("Loggin");
+	};
+
+	const onLoggoutEventHandler = () => {
+		alert("Loggout");
+	};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello agents prime</h1>
+      <LogginButton Text="Loggin" onClickHandler={onLogginEventHandler}></LogginButton>
+			<LoggoutButton Text="Logout" onClickHandler={onLoggoutEventHandler}></LoggoutButton>
     </div>
   );
 }
